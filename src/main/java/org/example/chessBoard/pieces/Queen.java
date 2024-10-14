@@ -7,16 +7,16 @@ import java.util.List;
 
 public class Queen implements IPiece {
     @Override
-    public List<String> getPossibleOutcome(int row, int column, String[][] board) {
+    public List<String> getPossibleOutcome(int row, int column) {
         List<String> outcomes = new ArrayList<>();
-        outcomes.addAll(this.getUpStep(row, column, board));
-        outcomes.addAll(this.getLeftStep(row, column, board));
-        outcomes.addAll(this.getRightStep(row, column, board));
-        outcomes.addAll(this.getDownStep(row, column, board));
-        outcomes.addAll(this.getLeftUpStep(row, column, board));
-        outcomes.addAll(this.getRightUpStep(row, column, board));
-        outcomes.addAll(this.getLeftDownStep(row, column, board));
-        outcomes.addAll(this.getRightDownStep(row, column, board));
+        outcomes.addAll(this.getUpStep(row, column));
+        outcomes.addAll(this.getLeftStep(row, column));
+        outcomes.addAll(this.getRightStep(row, column));
+        outcomes.addAll(this.getDownStep(row, column));
+        outcomes.addAll(this.getLeftUpStep(row, column));
+        outcomes.addAll(this.getRightUpStep(row, column));
+        outcomes.addAll(this.getLeftDownStep(row, column));
+        outcomes.addAll(this.getRightDownStep(row, column));
         return outcomes;
     }
 }
