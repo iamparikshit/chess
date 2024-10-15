@@ -1,7 +1,6 @@
 package org.example.chessBoard;
 
 import org.example.chessBoard.factory.PieceFactory;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -16,7 +15,7 @@ class ChessBoardTest {
         String type = "PAWN";
         List<String> expectedOutCome = List.of("G2");
 
-        var outcomes = cb.outComes(PieceFactory.createPiece(type), "G1");
+        var outcomes = cb.getOutcomes(PieceFactory.createPiece(type), "G1");
 
         assertArrayEquals(expectedOutCome.toArray(), outcomes.toArray());
     }
@@ -27,7 +26,7 @@ class ChessBoardTest {
         String type = "KING";
         List<String> expectedOutCome = List.of("C4", "C5", "C6", "D4", "D6", "E4", "E5", "E6");
 
-        var actualOutcomes = cb.outComes(PieceFactory.createPiece(type), "D5");
+        var actualOutcomes = cb.getOutcomes(PieceFactory.createPiece(type), "D5");
 
         assertTrue(
                 expectedOutCome.size() == actualOutcomes.size()
@@ -43,7 +42,7 @@ class ChessBoardTest {
         List<String> expectedOutCome = List.of("A4", "B4", "C4", "D4", "F4", "G4", "H4", "E1", "E2", "E3",
                 "E5", "E6", "E7", "E8", "A8", "B7", "C6", "D5", "F3", "G2", "H1", "B1", "C2", "D3", "F5", "G6", "H7");
 
-        var actualOutcomes = cb.outComes(PieceFactory.createPiece(type), "E4");
+        var actualOutcomes = cb.getOutcomes(PieceFactory.createPiece(type), "E4");
 
         assertTrue(
                 expectedOutCome.size() == actualOutcomes.size()
