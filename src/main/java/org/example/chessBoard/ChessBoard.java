@@ -5,7 +5,7 @@ import java.util.List;
 import static org.example.chessBoard.utils.Utils.MAX_CELL_COUNT;
 
 public class ChessBoard {
-    static String[][] board = new String[8][8];
+    public static String[][] board = new String[8][8];
 
     public ChessBoard(){
         for(int index =0; index < MAX_CELL_COUNT; index++){
@@ -27,6 +27,6 @@ public class ChessBoard {
         int row = MAX_CELL_COUNT - Integer.parseInt(String.valueOf(position.charAt(1)));
         int column = position.charAt(0) - 'A';
 
-        return inputPiece.getPossibleOutcome(row, column);
+        return inputPiece.getOutcomes(row, column);
     }
 }
