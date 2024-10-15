@@ -33,12 +33,15 @@ class PieceFactoryTest {
         assertTrue(actualObject instanceof Queen);
     }
 
-//    @Test
-//    void should_throw_exception_when_type_does_not_matches() throws Exception {
-//        var type = "NOT_Queen";
-//        var actualObject = PieceFactory.createPiece(type);
-//
-//        assertTrue(actualObject instanceof Queen);
-//    }
+    @Test
+    void should_throw_exception_when_type_does_not_matches() {
+        Exception exception = assertThrows(Exception.class,
+                () -> PieceFactory.createPiece("Not_match"));
+
+        String expectedMessage = "Please Select correct Piece";
+        String actualMessage = exception.getMessage();
+
+        assertEquals(expectedMessage, actualMessage);
+    }
 
 }
