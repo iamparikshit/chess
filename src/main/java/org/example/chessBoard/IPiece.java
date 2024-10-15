@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import static org.example.chessBoard.utils.Utils.CHESS_BOARD_SIZE;
+import static org.example.chessBoard.utils.Utils.getPosition;
+
 public interface IPiece {
 
     List<Rules> getPieceRules();
@@ -18,14 +21,16 @@ public interface IPiece {
 
     default List<String> addMove(int row, int col, Rules rule){
         if (this instanceof Pawn || this instanceof King) {
-            return List.of(ChessBoard.board[rule.getRow(row)][rule.getColumn(col)]);
+            row = rule.getRow(row);
+            col = rule.getColumn(col);
+            return List.of(getPosition(row, col));
         }
         else{
             List<String> possibleUpSteps = new ArrayList<>();
-            while(row>0 && row <7 && col>0 && col< 7){
+            while(row>0 && row <CHESS_BOARD_SIZE-1 && col>0 && col< CHESS_BOARD_SIZE-1){
                 row = rule.getRow(row);
                 col = rule.getColumn(col);
-                possibleUpSteps.add(ChessBoard.board[row][col]);
+               possibleUpSteps.add(getPosition(row, col));
             }
             return possibleUpSteps;
         }

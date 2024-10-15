@@ -2,6 +2,7 @@ package org.example.chessBoard;
 
 import java.util.List;
 
+import static org.example.chessBoard.utils.Utils.CHESS_BOARD_SIZE;
 import static org.example.chessBoard.utils.Utils.MAX_CELL_COUNT;
 
 public class ChessBoard {
