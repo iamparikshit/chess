@@ -1,20 +1,20 @@
 package org.example.chessBoard.pieces;
 
-import org.example.chessBoard.IPiece;
-import org.example.chessBoard.Rules;
+import org.example.chessBoard.Piece;
+import org.example.chessBoard.MoveRule;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.chessBoard.Rules.*;
-import static org.example.chessBoard.Rules.RightDown;
+import static org.example.chessBoard.MoveRule.*;
+import static org.example.chessBoard.MoveRule.RightDown;
 import static org.example.chessBoard.utils.Utils.CHESS_BOARD_SIZE;
 import static org.example.chessBoard.utils.Utils.getPositionFrom;
 
-public class Queen implements IPiece {
+public class Queen implements Piece {
 
     @Override
-    public List<Rules> getPieceMoveRules() {
+    public List<MoveRule> getMoveRules() {
         return List.of(
                 Up,
                 Down,
@@ -28,7 +28,7 @@ public class Queen implements IPiece {
     }
 
     @Override
-    public List<String> addMove(int row, int column, Rules rule) {
+    public List<String> addMove(int row, int column, MoveRule rule) {
         List<String> possibleUpSteps = new ArrayList<>();
         while(row>0 && row <CHESS_BOARD_SIZE-1 && column>0 && column< CHESS_BOARD_SIZE-1){
             row = rule.getRow(row);

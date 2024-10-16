@@ -1,7 +1,7 @@
 package org.example;
 
 import org.example.chessBoard.ChessBoard;
-import org.example.chessBoard.IPiece;
+import org.example.chessBoard.Piece;
 import org.example.chessBoard.factory.PieceFactory;
 
 import java.util.List;
@@ -19,7 +19,7 @@ public class Main {
 
         if(position.length() == 2 && List.of(pieces).contains(pieceType)){
             ChessBoard chessBoard = new ChessBoard();
-            IPiece piece = PieceFactory.createPiece(pieceType);
+            Piece piece = PieceFactory.createPiece(pieceType);
             List<String> outcomes = chessBoard.getOutcomes(piece, position);
 
             System.out.println("POSSIBLE OUTCOMES ARE : "+outcomes);

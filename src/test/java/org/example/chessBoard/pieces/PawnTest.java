@@ -1,12 +1,12 @@
 package org.example.chessBoard.pieces;
 
-import org.example.chessBoard.IPiece;
-import org.example.chessBoard.Rules;
+import org.example.chessBoard.Piece;
+import org.example.chessBoard.MoveRule;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.example.chessBoard.Rules.*;
+import static org.example.chessBoard.MoveRule.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class PawnTest {
@@ -15,9 +15,9 @@ class PawnTest {
         var expectedRules = List.of(
                 Up
         );
-        IPiece pawn  = new Pawn();
+        Piece pawn  = new Pawn();
 
-        List<Rules> rules = pawn.getPieceMoveRules();
+        List<MoveRule> rules = pawn.getMoveRules();
 
         assertArrayEquals(expectedRules.toArray(), rules.toArray());
     }

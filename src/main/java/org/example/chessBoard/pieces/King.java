@@ -1,19 +1,17 @@
 package org.example.chessBoard.pieces;
 
-import org.example.chessBoard.IPiece;
-import org.example.chessBoard.Rules;
+import org.example.chessBoard.Piece;
+import org.example.chessBoard.MoveRule;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import static org.example.chessBoard.Rules.*;
-import static org.example.chessBoard.utils.Utils.CHESS_BOARD_SIZE;
+import static org.example.chessBoard.MoveRule.*;
 import static org.example.chessBoard.utils.Utils.getPositionFrom;
 
-public class King implements IPiece {
+public class King implements Piece {
 
     @Override
-    public List<Rules> getPieceMoveRules() {
+    public List<MoveRule> getMoveRules() {
         return List.of(
                 Up,
                 Down,
@@ -26,7 +24,7 @@ public class King implements IPiece {
         );
     }
     @Override
-    public List<String> addMove(int row, int column, Rules rule){
+    public List<String> addMove(int row, int column, MoveRule rule){
         row = rule.getRow(row);
         column = rule.getColumn(column);
         return List.of(getPositionFrom(row, column));

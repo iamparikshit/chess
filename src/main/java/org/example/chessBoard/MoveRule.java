@@ -1,6 +1,6 @@
 package org.example.chessBoard;
 
-public enum Rules {
+public enum MoveRule {
     Up(-1, 0),
     Down(1, 0),
     Left(0, -1),
@@ -20,7 +20,7 @@ public enum Rules {
         return rowIndex + row;
     }
 
-    Rules(int row, int column) {
+    MoveRule(int row, int column) {
         this.row = row;
         this.column = column;
     }

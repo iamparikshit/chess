@@ -1,13 +1,13 @@
 package org.example.chessBoard.pieces;
 
-import org.example.chessBoard.IPiece;
-import org.example.chessBoard.Rules;
+import org.example.chessBoard.Piece;
+import org.example.chessBoard.MoveRule;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.example.chessBoard.Rules.*;
-import static org.example.chessBoard.Rules.RightDown;
+import static org.example.chessBoard.MoveRule.*;
+import static org.example.chessBoard.MoveRule.RightDown;
 import static org.junit.jupiter.api.Assertions.*;
 
 class QueenTest {
@@ -24,9 +24,9 @@ class QueenTest {
                 LeftDown,
                 RightDown
         );
-        IPiece queen  = new Queen();
+        Piece queen  = new Queen();
 
-        List<Rules> rules = queen.getPieceMoveRules();
+        List<MoveRule> rules = queen.getMoveRules();
 
         assertArrayEquals(expectedRules.toArray(), rules.toArray());
     }
