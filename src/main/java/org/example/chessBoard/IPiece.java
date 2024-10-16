@@ -19,18 +19,18 @@ public interface IPiece {
                 .collect(Collectors.toList());
     }
 
-    default List<String> addMove(int row, int col, Rules rule){
+    default List<String> addMove(int row, int column, Rules rule){
         if (this instanceof Pawn || this instanceof King) {
             row = rule.getRow(row);
-            col = rule.getColumn(col);
-            return List.of(getPosition(row, col));
+            column = rule.getColumn(column);
+            return List.of(getPosition(row, column));
         }
         else{
             List<String> possibleUpSteps = new ArrayList<>();
-            while(row>0 && row <CHESS_BOARD_SIZE-1 && col>0 && col< CHESS_BOARD_SIZE-1){
+            while(row>0 && row <CHESS_BOARD_SIZE-1 && column>0 && column< CHESS_BOARD_SIZE-1){
                 row = rule.getRow(row);
-                col = rule.getColumn(col);
-               possibleUpSteps.add(getPosition(row, col));
+                column = rule.getColumn(column);
+               possibleUpSteps.add(getPosition(row, column));
             }
             return possibleUpSteps;
         }
