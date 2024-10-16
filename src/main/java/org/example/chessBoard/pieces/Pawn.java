@@ -18,8 +18,10 @@ public class Pawn implements Piece {
     public List<String> addMove(int row, int column, MoveRule rule) {
         row = rule.getRow(row);
         column = rule.getColumn(column);
-        if(validateCurrentCell(row, column)) return List.of(getPositionFrom(row, column));
-        else return List.of();
+
+        return isValidMove(row, column)
+                ? List.of(getPositionFrom(row, column))
+                :List.of();
     }
 
 }

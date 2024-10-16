@@ -8,7 +8,6 @@ import java.util.List;
 
 import static org.example.chessBoard.MoveRule.*;
 import static org.example.chessBoard.MoveRule.RightDown;
-import static org.example.chessBoard.utils.Utils.CHESS_BOARD_SIZE;
 import static org.example.chessBoard.utils.Utils.getPositionFrom;
 
 public class Queen implements Piece {
@@ -32,7 +31,7 @@ public class Queen implements Piece {
         List<String> possibleUpSteps = new ArrayList<>();
         row = rule.getRow(row);
         column = rule.getColumn(column);
-        while(validateCurrentCell(row, column)){
+        while(isValidMove(row, column)){
             possibleUpSteps.add(getPositionFrom(row, column));
             row = rule.getRow(row);
             column = rule.getColumn(column);

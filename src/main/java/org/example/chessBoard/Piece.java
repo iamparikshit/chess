@@ -10,7 +10,7 @@ public interface Piece {
 
     List<String> addMove(int row, int column, MoveRule rule);
 
-    default boolean validateCurrentCell(int row, int column){
+    default boolean isValidMove(int row, int column){
         return row>=0 && row <CHESS_BOARD_SIZE && column>=0 && column< CHESS_BOARD_SIZE;
     }
 }
