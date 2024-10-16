@@ -6,7 +6,7 @@ import java.util.stream.Collectors;
 import static org.example.chessBoard.utils.Utils.*;
 
 public class ChessBoard {
-    public List<String> getOutcomes(Piece inputPiece, String position){
+    public List<String> getPossibleOutcomes(Piece inputPiece, String position){
         int row = getRowIndex(position);
         int column = getColumnIndex(position);
 

@@ -20,7 +20,7 @@ public class Main {
         if(position.length() == 2 && List.of(pieces).contains(pieceType)){
             ChessBoard chessBoard = new ChessBoard();
             Piece piece = PieceFactory.createPiece(pieceType);
-            List<String> outcomes = chessBoard.getOutcomes(piece, position);
+            List<String> outcomes = chessBoard.getPossibleOutcomes(piece, position);
 
             System.out.println("POSSIBLE OUTCOMES ARE : "+outcomes);
         }
