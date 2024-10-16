@@ -8,7 +8,7 @@ import java.util.List;
 public class Pawn implements IPiece {
 
     @Override
-    public List<Rules> getPieceRules(){
+    public List<Rules> getPieceMoveRules(){
         return List.of(Rules.Up);
     }
 

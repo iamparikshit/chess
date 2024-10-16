@@ -10,7 +10,7 @@ import static org.example.chessBoard.Rules.*;
 public class King implements IPiece {
 
     @Override
-    public List<Rules> getPieceRules() {
+    public List<Rules> getPieceMoveRules() {
         return List.of(
                 Up,
                 Down,

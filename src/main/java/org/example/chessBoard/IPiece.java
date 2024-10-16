@@ -12,9 +12,9 @@ import static org.example.chessBoard.utils.Utils.getPosition;
 
 public interface IPiece {
 
-    List<Rules> getPieceRules();
-    default List<String> getOutcomes(int row, int column){
-        return getPieceRules().stream()
+    List<Rules> getPieceMoveRules();
+    default List<String> getPossibleOutcomes(int row, int column){
+        return getPieceMoveRules().stream()
                 .flatMap(rule -> addMove(row, column, rule).stream())
                 .collect(Collectors.toList());
     }

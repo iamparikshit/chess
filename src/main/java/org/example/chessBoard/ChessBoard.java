@@ -9,6 +9,6 @@ public class ChessBoard {
         int row = CHESS_BOARD_SIZE - Integer.parseInt(String.valueOf(position.charAt(1)));
         int column = position.charAt(0) - 'A';
 
-        return inputPiece.getOutcomes(row, column);
+        return inputPiece.getPossibleOutcomes(row, column);
     }
 }
