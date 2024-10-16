@@ -27,6 +27,8 @@ public class King implements Piece {
     public List<String> addMove(int row, int column, MoveRule rule){
         row = rule.getRow(row);
         column = rule.getColumn(column);
-        return List.of(getPositionFrom(row, column));
+
+        if(validateCurrentCell(row, column)) return List.of(getPositionFrom(row, column));
+        else return List.of();
     }
 }

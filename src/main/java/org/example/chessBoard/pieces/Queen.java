@@ -30,10 +30,12 @@ public class Queen implements Piece {
     @Override
     public List<String> addMove(int row, int column, MoveRule rule) {
         List<String> possibleUpSteps = new ArrayList<>();
-        while(row>0 && row <CHESS_BOARD_SIZE-1 && column>0 && column< CHESS_BOARD_SIZE-1){
+        row = rule.getRow(row);
+        column = rule.getColumn(column);
+        while(validateCurrentCell(row, column)){
+            possibleUpSteps.add(getPositionFrom(row, column));
             row = rule.getRow(row);
             column = rule.getColumn(column);
-            possibleUpSteps.add(getPositionFrom(row, column));
         }
         return possibleUpSteps;
     }
