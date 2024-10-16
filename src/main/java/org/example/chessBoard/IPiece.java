@@ -8,7 +8,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import static org.example.chessBoard.utils.Utils.CHESS_BOARD_SIZE;
-import static org.example.chessBoard.utils.Utils.getPosition;
+import static org.example.chessBoard.utils.Utils.getPositionFrom;
 
 public interface IPiece {
 
@@ -23,14 +23,14 @@ public interface IPiece {
         if (this instanceof Pawn || this instanceof King) {
             row = rule.getRow(row);
             column = rule.getColumn(column);
-            return List.of(getPosition(row, column));
+            return List.of(getPositionFrom(row, column));
         }
         else{
             List<String> possibleUpSteps = new ArrayList<>();
             while(row>0 && row <CHESS_BOARD_SIZE-1 && column>0 && column< CHESS_BOARD_SIZE-1){
                 row = rule.getRow(row);
                 column = rule.getColumn(column);
-               possibleUpSteps.add(getPosition(row, column));
+               possibleUpSteps.add(getPositionFrom(row, column));
             }
             return possibleUpSteps;
         }
